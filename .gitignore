@@ -8,7 +8,7 @@ prometheus-3.11.3.windows-amd64/promtool.exe
 prometheus-3.11.3.windows-amd64/data/
 *.exe
 
-.env
+
 api_agent.db
 logs/
 __pycache__/
