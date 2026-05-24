@@ -6,8 +6,9 @@ Set your webhook URL in .env or as environment variable SLACK_WEBHOOK_URL.
 import os
 import requests
 from datetime import datetime
-
-SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL", "")
+import streamlit as st
+slack_url=st.secrets.SLACK_WEBHOOK_URL
+SLACK_WEBHOOK_URL = slack_url
 
 SEVERITY_EMOJI = {
     "LOW": "🟡",

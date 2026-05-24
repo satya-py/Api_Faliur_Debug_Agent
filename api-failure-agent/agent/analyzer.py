@@ -2,7 +2,7 @@
 agent/analyzer.py — AI Agent using Google Gemini.
 Now saves to SQLite instead of detections.jsonl.
 """
-
+import streamlit as st
 import os
 import requests
 from datetime import datetime
@@ -11,7 +11,9 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from database import save_detection, init_db
 
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+api_key=st.secrets.GOOGLE_API_KEY
+
+genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 PROMETHEUS = os.getenv("PROMETHEUS_URL", "http://localhost:9090")
