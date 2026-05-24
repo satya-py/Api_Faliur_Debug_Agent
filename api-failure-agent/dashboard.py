@@ -30,7 +30,12 @@ from log_parser import test_endpoint, build_url_summary, parse_json_logs, aggreg
 import google.generativeai as genai
 
 PROMETHEUS = os.getenv("PROMETHEUS_URL", "http://localhost:9090")
-GOOGLE_KEY = os.getenv("GOOGLE_API_KEY", "")
+# Read from Streamlit secrets (cloud) or .env (local)
+try:
+    GOOGLE_KEY = st.secrets["GOOGLE_API_KEY"]
+except Exception:
+    GOOGLE_KEY = os.getenv("GOOGLE_API_KEY", "")
+    
 if GOOGLE_KEY:
     genai.configure(api_key=GOOGLE_KEY)
     gemini_model = genai.GenerativeModel("gemini-2.5-flash")

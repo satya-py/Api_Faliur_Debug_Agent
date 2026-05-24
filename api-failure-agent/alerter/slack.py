@@ -3,12 +3,12 @@ Alerter - Sends failure alerts to Slack.
 Set your webhook URL in .env or as environment variable SLACK_WEBHOOK_URL.
 """
 
+# alerter/slack.py
 import os
 import requests
 from datetime import datetime
-import streamlit as st
-slack_url=st.secrets.SLACK_WEBHOOK_URL
-SLACK_WEBHOOK_URL = slack_url
+
+SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL", "")
 
 SEVERITY_EMOJI = {
     "LOW": "🟡",

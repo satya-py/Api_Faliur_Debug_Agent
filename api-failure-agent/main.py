@@ -2,13 +2,11 @@
 main.py — Entry point. Reads check interval from SQLite settings
 so the dashboard can control it live.
 """
-
+# main.py
 import os
 import time
 import schedule
 from dotenv import load_dotenv
-import streamlit as st
-
 
 load_dotenv()
 
@@ -18,7 +16,6 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from database import init_db, get_setting
 from agent.analyzer import run
 from alerter.slack import send_slack_alert
-api_key=st.secrets.GOOGLE_API_KEY
 
 init_db()
 
