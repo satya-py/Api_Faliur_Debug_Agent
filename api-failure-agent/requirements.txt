@@ -6,3 +6,4 @@ anthropic
 schedule
 streamlit
 python-dotenv
+google-generativeai
