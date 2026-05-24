@@ -168,3 +168,9 @@ CHECK_INTERVAL_MINUTES=2   ← check every 2 minutes
 ## Stopping Everything
 
 Press `Ctrl+C` in each terminal.
+
+
+## ⚠️ Download Prometheus Separately
+Prometheus binaries are not included (too large for GitHub).
+Download from: https://prometheus.io/download/
+Choose: windows-amd64 → extract into `prometheus-3.11.3.windows-amd64/`
